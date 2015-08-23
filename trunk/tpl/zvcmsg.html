@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+    <head>
+        <meta content="text/html; charset=gbk" http-equiv="Content-Type" />
+        <title>操作提示</title>
+        <?php
+        if ("enableRedirect" == $enableRedirect) {
+            echo "<meta http-equiv=\"refresh\" content=\"2;url=".$jumpTo."\" \/>";
+        }
+        ?>
+        <style type="text/css">
+            body {
+                color: #65af41;
+                font-size: 12px;
+            }
+            
+            a {
+                color: #aaa;
+            }
+            
+            .warper {
+                text-align: center;
+                padding-top: 256px;
+            }
+            
+            .content {
+                margin: 0px auto;
+                width: 768px;
+                padding: 15px;
+                border: #e4f5da 1px solid;
+                background-color: #f9fdf7;
+            }
+            
+            .msg_content {
+                font-size: 13px;
+            }
+            
+            .msg_confirm {
+                margin-top: 7px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="warper">
+            <div class="content">
+                <div class="msg_content">
+                    <?php
+                    if (isset($msg)) {
+                        echo $msg;
+                    } else {
+                        echo "很抱歉，看来没什么问题";
+                    }
+                    ?>
+                </div>
+                <div class="msg_confirm">
+                    <a href="<?php echo $jumpTo; ?>">点击这里继续</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
